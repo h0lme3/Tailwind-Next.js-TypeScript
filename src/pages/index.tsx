@@ -12,10 +12,11 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex flex-col space-y-4 justify-center items-center h-screen">
         <p className="text-center text-7xl">
           Using Tailwind CSS + Next.js + TypeScript Like a Pro
         </p>
+        <p className="sass">Yes!</p>
       </div>
     </div>
   );
