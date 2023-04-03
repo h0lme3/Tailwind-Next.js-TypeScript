@@ -2,8 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 const Home: NextPage = () => {
-  const APP_VERSION1 = 'v1.0.0'
-  const APP_VERSION2: number = 'v1.0.0'
   return (
     <div className="">
       <Head>
