@@ -1,0 +1,26 @@
+{
+  // Forces VS Code to trigger completions when editing "string" content - Used for Tailwind Styled Components
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // Tell VSCode to format files on save
+  "editor.formatOnSave": true,
+  // Tell VSCode to use Prettier as default file formatter
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.indentSize": 2,
+  "editor.tabSize": 2,
+  // Rules for Tailwind
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    "tw\\.[^`]+`([^`]*)`",
+    "tw\\(.*?\\).*?`([^`]*)"
+  ]
+}

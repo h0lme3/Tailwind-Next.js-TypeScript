@@ -1,14 +1,25 @@
-import React from 'react'
+import React from "react";
 
-import { Col } from 'components'
+import Layout from "layouts";
+import { Container } from "./styled";
+import { Text } from "components/Text";
 
 const ProView = () => {
   return (
-    <Col className="justify-center items-center h-screen">
-      <p className="text-center text-7xl tablet:text-4xl">TNT Stack Like a Pro</p>
-      <p className="sass tablet:text-2xl tablet:rounded-lg tablet:px-2 tablet:py-1">Yes!</p>
-    </Col>
-  )
-}
+    <Container>
+      <Layout>
+        <Text align="left" color="#4c9b34" size={40} weight={600}>
+          TypeScript + Next.js
+        </Text>
+        <Text align="center" color="#b47017" size={90} weight={600}>
+          TNTs
+        </Text>
+        <Text align="right" color="#4626b9" size={40} weight={600}>
+          Tailwind CSS + styled-components
+        </Text>
+      </Layout>
+    </Container>
+  );
+};
 
-export default ProView
+export default ProView;

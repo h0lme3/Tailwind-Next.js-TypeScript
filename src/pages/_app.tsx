@@ -1,20 +1,17 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
-import Layout from 'layouts'
-import { TempProvider } from 'contexts'
+import { TempProvider } from "contexts";
 
-import 'styles/globals.scss'
+import "styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <TempProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </TempProvider>
     </>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

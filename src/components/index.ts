@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-export const Col = dynamic(() => import('./Box/Col'))
-export const Row = dynamic(() => import('./Box/Row'))
+export const Col = dynamic(() => import("./Box/Col"));
+export const Row = dynamic(() => import("./Box/Row"));

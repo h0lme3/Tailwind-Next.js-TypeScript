@@ -1,5 +1,5 @@
 // define all types
 
-export interface extraClassProps {
-  className?: string
+export interface ExtraClassProps {
+  className?: string;
 }
