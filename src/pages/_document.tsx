@@ -1,5 +1,8 @@
 import type { DocumentContext, DocumentInitialProps } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
+
+const gtag = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`;
 
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -15,11 +18,15 @@ export default class CustomDocument extends Document {
           {/* meta tags for SEO */}
           <meta httpEquiv="Cache-control" content="max-age=3153600" />
           <meta name="title" content="TNTs" />
-          <meta name="description" content="TypeScript + Next.js + Tailwind CSS + styled-components" key="desc" />
+          <meta
+            name="description"
+            content="Built by TNTs(TypeScript, Next.js, Tailwind CSS, and styled-components)"
+            key="desc"
+          />
           <meta name="keywords" content="tech stack, frontend" />
           <meta property="og:url" content="" />
           <meta property="og:type" content="template site" />
-          <meta property="og:site_name" content="tnts" />
+          <meta property="og:site_name" content="TNTs" />
 
           <link rel="publisher" href="" />
           <meta name="robots" content="index,follow" />
@@ -27,6 +34,25 @@ export default class CustomDocument extends Document {
 
           {/* icon */}
           <link rel="icon" href="/favicon.ico" type="image/ico" />
+
+          {/* google tagmanager and google analytics*/}
+          {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+            <>
+              <Script async src={gtag} strategy="beforeInteractive" />
+              <Script
+                id="google-analytics"
+                dangerouslySetInnerHTML={{
+                  __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments)}
+              gtag("js", new Date());
+              gtag("config", '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+            `,
+                }}
+                strategy="beforeInteractive"
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />

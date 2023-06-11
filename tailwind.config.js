@@ -1,15 +1,23 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 module.exports = {
-  content: ['src/**/*.{js,jsx,ts,tsx}'],
+  content: ["src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      desktop: { max: '1440px' },
-      basic: { max: '1280px' },
-      laptop: { max: '1024px' },
-      tablet: { max: '768px' },
-      mobile: { max: '425px' },
+      desktop: { max: "1440px" },
+      basic: { max: "1280px" },
+      laptop: { max: "1024px" },
+      tablet: { max: "768px" },
+      medium: { max: "640px" },
+      mobile: { max: "430px" },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["", ...defaultTheme.fontFamily.sans], // default font style
+      },
+    },
   },
   plugins: [],
-}
+};
