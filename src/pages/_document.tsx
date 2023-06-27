@@ -17,18 +17,18 @@ export default class CustomDocument extends Document {
         <Head>
           {/* meta tags for SEO */}
           <meta httpEquiv="Cache-control" content="max-age=3153600" />
-          <meta name="title" content="TNTs" />
+          <meta name="title" content="TNTs | Holmes" />
           <meta
             name="description"
             content="Built by TNTs(TypeScript, Next.js, Tailwind CSS, and styled-components)"
             key="desc"
           />
           <meta name="keywords" content="tech stack, frontend" />
-          <meta property="og:url" content="" />
+          <meta property="og:url" content="https://tnts.holmes007.online" />
           <meta property="og:type" content="template site" />
           <meta property="og:site_name" content="TNTs" />
 
-          <link rel="publisher" href="" />
+          <link rel="publisher" href="https://holmes007.online" />
           <meta name="robots" content="index,follow" />
           <meta name="GOOGLEBOT" content="index,follow" />
 

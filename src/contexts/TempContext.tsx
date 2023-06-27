@@ -1,12 +1,18 @@
-import { createContext, useContext, useState } from "react";
 import type { FC, PropsWithChildren } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 // create context
-export const TempContext = createContext({});
+export const TempContext = createContext({
+  temp: "temp",
+  setTemp: (value: string) => {
+    value;
+  },
+});
 
 export const TempProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [temp, setTemp] = useState("temp");
-  return <TempContext.Provider value={{ temp, setTemp }}>{children}</TempContext.Provider>;
+  const [temp, setTemp] = useState<string>("temp");
+  const value = useMemo(() => ({ temp, setTemp }), [temp]);
+  return <TempContext.Provider value={value}>{children}</TempContext.Provider>;
 };
 
 // use context
